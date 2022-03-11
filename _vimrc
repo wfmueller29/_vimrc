@@ -43,10 +43,10 @@ nnoremap <leader>sr :vsplit<CR><C-w>w:terminal<space>R<CR><C-w>w:q!<CR>
 nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Window Mappings
-noremap <C-j> <C-W>j<C-W>_
-noremap <C-k> <C-W>k<C-W>_
-noremap <C-h> <C-W>h<C-W>|
-noremap <C-l> <C-W>l<C-W>|
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
 
 " }}}
 
@@ -76,14 +76,19 @@ au GUIEnter * simalt ~x
 if has("gui_running")
   " Set a nicer font.
   set guifont=Consolas:h11:cDEFAULT
-  " Hide the toolbar.
-  set guioptions-=T
+  set guioptions-=T " Hide the toolbar.
+  set guioptions-=m "remove menu bar
+  set guioptions-=l "remove scroll bar 
+  set guioptions-=r "remove scroll bar
+  set guioptions-=b "remove scroll bar
 endif
+
 "  }}}
 
 colorscheme gruvbox-material
 set background=dark
 set laststatus=2
+
 " colo PaperColor
 " hi ColorColumn ctermbg=grey guibg=grey
 
