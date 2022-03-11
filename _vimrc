@@ -23,7 +23,7 @@ call plug#begin('~/vimfiles/plugged')
 " Plug 'vim-pandoc/vim-pandoc' 
 " Plug 'vim-pandoc/vim-pandoc-syntax' 
 " Plug 'vim-pandoc/vim-rmarkdown' 
-Plug 'NLKNguyen/papercolor-theme'   
+" Plug 'NLKNguyen/papercolor-theme'   
 " Plug 'ackyshake/VimCompletesMe' 
 Plug 'vim-airline/vim-airline' 
 Plug 'vim-airline/vim-airline-themes' 
