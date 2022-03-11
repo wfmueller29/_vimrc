@@ -30,6 +30,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'karoliskoncevicius/vim-sendtowindow'
 Plug 'sainnhe/gruvbox-material' 
 Plug 'tpope/vim-fugitive'
+Plug 'ackyshake/VimCompletesMe'
 
 call plug#end()
 " }}}
@@ -41,12 +42,19 @@ let mapleader = " "
 nnoremap <leader>sr :vsplit<CR><C-w>w:terminal<space>R<CR><C-w>w:q!<CR>
 " close the current buffer without closing the window
 nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+" insert one character
+nnoremap <leader>i i_<Esc>r
 
 " Window Mappings
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
+" Apply same mappings to terminal
+tnoremap <C-j> <C-W>j
+tnoremap <C-k> <C-W>k
+tnoremap <C-h> <C-W>h
+tnoremap <C-l> <C-W>l
 
 " }}}
 
