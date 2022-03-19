@@ -15,6 +15,8 @@ set scrolloff=8 "start scroll 8 lines before
 set incsearch "incremental search 
 set wildmenu
 set hidden "so i can move through buffers without saving
+set signcolumn=yes "to show errors
+set backspace=2 "allow backspace over indent, start, and new lines
 
 " PLUGINS -------------------------------------------------------------------{{{ 
 " add plugins 
@@ -30,7 +32,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'karoliskoncevicius/vim-sendtowindow'
 Plug 'sainnhe/gruvbox-material' 
 Plug 'tpope/vim-fugitive'
-Plug 'ackyshake/VimCompletesMe'
+"Plug 'ackyshake/VimCompletesMe'
+Plug 'dense-analysis/ale'
+Plug 'prabirshrestha/asyncomplete.vim'
+"Plug 'andreypopp/asyncomplete-ale.vim'
 
 call plug#end()
 " }}}
@@ -56,6 +61,7 @@ tnoremap <C-k> <C-W>k
 tnoremap <C-h> <C-W>h
 tnoremap <C-l> <C-W>l
 
+
 " }}}
 
 " VIMSCRIPT ------------------------------------------------------------------{{{
@@ -66,6 +72,14 @@ augroup filetype_vim
  autocmd FileType vim setlocal foldmethod=marker
 augroup END 
 
+" Use ale within asyncomplete
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ale#get_source_options({
+    \ 'priority': 10, 
+    \ }))
+" remaps for asyncomplte 
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 " autocmd vimenter * ++nested colorscheme gruvbox
 " }}}
 
@@ -89,14 +103,17 @@ if has("gui_running")
   set guioptions-=l "remove scroll bar 
   set guioptions-=r "remove scroll bar
   set guioptions-=b "remove scroll bar
+  set guioptions= "remove all gui options
 endif
 
 "  }}}
 
+
 colorscheme gruvbox-material
 set background=dark
 set laststatus=2
-
+"let g:ale_completion_enable = 1
+let g:asyncomplete_auto_popup=1
 " colo PaperColor
 " hi ColorColumn ctermbg=grey guibg=grey
 
