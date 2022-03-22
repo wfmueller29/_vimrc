@@ -2,4 +2,4 @@
 !.gitingore
 !_vimrc
 !vimfiles/vimrc
-!vimfiles/after/
+!vimfiles/after/*
