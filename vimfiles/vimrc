@@ -17,7 +17,14 @@ set wildmenu
 set hidden "so i can move through buffers without saving
 set signcolumn=yes "to show errors
 set backspace=2 "allow backspace over indent, start, and new lines
-let $RC=$MYVIMRC "create environment variable RC to quickly edit vimrc
+let $DOT = 'C:/Users/muellerwf/dot/'
+let $RC='C:/Users/muellerwf/dot/vimfiles/vimrc' "create environment variable RC to quickly edit vimrc
+" Source RC file from dot file directory. This way I can updated rc from 
+" different repo
+command Sorc !ROBOCOPY C:\Users\muellerwf\dot\  
+                    \  C:\Users\muellerwf\ 
+                    \  /e 
+                    \  /xf .gitignore
 
 " PLUGINS -------------------------------------------------------------------{{{ 
 " add plugins 
