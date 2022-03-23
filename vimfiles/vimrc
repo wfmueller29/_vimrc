@@ -25,6 +25,7 @@ command Sorc !ROBOCOPY C:\Users\muellerwf\dot\
                     \  C:\Users\muellerwf\ 
                     \  /e 
                     \  /xf .gitignore
+set path+=**  "allows fuzzy search using find command
 
 " PLUGINS -------------------------------------------------------------------{{{ 
 " add plugins 
