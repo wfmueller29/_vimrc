@@ -140,6 +140,8 @@ endif
 
 "  }}}
 
+let g:gruvbox_material_enable_italic=0 "fixed grubox highlight issue on mac
+let g:gruvbox_material_disable_italic_comment=1 "fixed grubox highlight issue on mac
 set termguicolors "fixed grubox highlight issue on mac
 colorscheme gruvbox-material
 set background=dark
