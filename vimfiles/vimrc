@@ -1,3 +1,4 @@
+" SETS --------------------------------------------------------------------{{{
 set number 
 set relativenumber
 set noerrorbells 
@@ -20,8 +21,9 @@ set backspace=2 "allow backspace over indent, start, and new lines
 let $DOT = $HOME . "/dot"
 let $RC = $HOME . "/dot/vimfiles/vimrc"
 set path+=**  "allows fuzzy search using find command
+"}}}---------------------------------------------------------------------------
 
-" PLUGINS -------------------------------------------------------------------{{{ 
+" PLUGINS ------------------------------------------------------------------{{{
 " add plugins 
 
 call plug#begin() 
@@ -33,6 +35,7 @@ call plug#begin()
 Plug 'vim-airline/vim-airline' 
 Plug 'vim-airline/vim-airline-themes' 
 Plug 'karoliskoncevicius/vim-sendtowindow'
+"Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/gruvbox-material' 
 Plug 'tpope/vim-fugitive'
 "Plug 'ackyshake/VimCompletesMe'
@@ -43,7 +46,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 call plug#end()
 " }}}
 
-" MAPPINGS ------------------------------------------------------------------{{{
+" MAPPINGS -----------------------------------------------------------------{{{
 "
 let mapleader = " " 
 " open an r terminal in the right window
@@ -70,7 +73,7 @@ cnoremap kj <C-C>
 
 " }}}
 
-" VIMSCRIPT ------------------------------------------------------------------{{{
+" VIMSCRIPT ----------------------------------------------------------------{{{
 " This will enable code folding
 " Use the marker method of folding
 augroup filetype_vim
@@ -112,7 +115,7 @@ command! Sorc call MoveDotRepoAndSource() | source $MYVIMRC
 
 " }}}
 
-" STATUS LINE ----------------------------------------------------------------{{{
+" STATUS LINE --------------------------------------------------------------{{{
 
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -121,8 +124,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 " }}}
 
-" GVIM  ------------------------------------------------------------------{{{
-"
+" GVIM  --------------------------------------------------------------------{{{
+
 au GUIEnter * simalt ~x
 if has("gui_running")
   " Set a nicer font.
@@ -137,7 +140,7 @@ endif
 
 "  }}}
 
-
+set termguicolors "fixed grubox highlight issue on mac
 colorscheme gruvbox-material
 set background=dark
 set laststatus=2
