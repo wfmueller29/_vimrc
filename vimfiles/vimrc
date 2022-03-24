@@ -17,20 +17,14 @@ set wildmenu
 set hidden "so i can move through buffers without saving
 set signcolumn=yes "to show errors
 set backspace=2 "allow backspace over indent, start, and new lines
-let $DOT = 'C:/Users/muellerwf/dot/'
-let $RC='C:/Users/muellerwf/dot/vimfiles/vimrc' "create environment variable RC to quickly edit vimrc
-" Source RC file from dot file directory. This way I can updated rc from 
-" different repo
-command Sorc !ROBOCOPY C:\Users\muellerwf\dot\  
-                    \  C:\Users\muellerwf\ 
-                    \  /e 
-                    \  /xf .gitignore
+let $DOT = $HOME . "/dot"
+let $RC = $HOME . "/dot/vimfiles/vimrc"
 set path+=**  "allows fuzzy search using find command
 
 " PLUGINS -------------------------------------------------------------------{{{ 
 " add plugins 
-call plug#begin('~/vimfiles/plugged') 
 
+call plug#begin() 
 " Plug 'vim-pandoc/vim-pandoc' 
 " Plug 'vim-pandoc/vim-pandoc-syntax' 
 " Plug 'vim-pandoc/vim-rmarkdown' 
@@ -93,6 +87,29 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 " autocmd vimenter * ++nested colorscheme gruvbox
+
+" Source RC file from dot file directory. This way I can updated rc from 
+" different repo
+let win=has('win32')
+let mac=has('macunix')
+function! MoveDotRepoAndSource()
+  if has('win32')
+    !ROBOCOPY C:\Users\muellerwf\dot\  
+                    \  C:\Users\muellerwf\ 
+                    \  /e 
+                    \  /xf .gitignore
+                    \  /xd .git
+  elseif has('macunix')
+    !rsync $HOME/dot/* $HOME --exclude=$HOME/.gitignore 
+                    \   --exclude=$HOME/.git/ -r -v  
+    !rsync $HOME/vimfiles/* $HOME/.vim/ -r 
+    !rm -rf $HOME/vimfiles
+    !mv $HOME/.vim/vimrc $HOME/.vimrc
+  endif
+endfunction
+
+command! Sorc call MoveDotRepoAndSource() | source $MYVIMRC
+
 " }}}
 
 " STATUS LINE ----------------------------------------------------------------{{{
