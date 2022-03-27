@@ -42,6 +42,7 @@ Plug 'tpope/vim-fugitive'
 "Plug 'ackyshake/VimCompletesMe'
 Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'psliwka/vim-smoothie'
 "Plug 'andreypopp/asyncomplete-ale.vim'
 
 call plug#end()
@@ -144,6 +145,7 @@ endif
 
 "  }}}
 
+" OUTRO --------------------------------------------------------------------{{{  
 let g:gruvbox_material_enable_italic=0 "fixed grubox highlight issue on mac
 let g:gruvbox_material_disable_italic_comment=1 "fixed grubox highlight issue on mac
 set termguicolors "fixed grubox highlight issue on mac
@@ -154,4 +156,5 @@ set laststatus=2
 let g:asyncomplete_auto_popup=1
 " colo PaperColor
 " hi ColorColumn ctermbg=grey guibg=grey
+" }}}--------------------------------------------------------------------------
 
