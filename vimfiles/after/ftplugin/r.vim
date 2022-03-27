@@ -6,4 +6,4 @@ set smartindent
 set termguicolors
 
 " ale remap styler
-nnoremap <leader> afsty :ALEFix<space>styler<CR>
+nnoremap <leader>afsty :ALEFix<space>styler<CR>
