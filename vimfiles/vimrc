@@ -79,6 +79,12 @@ nnoremap <leader>afws :ALEFix<space>trim_whitespace<CR>
 " }}}
 
 " VIMSCRIPT ----------------------------------------------------------------{{{
+
+" netrw hangup leaving buffer
+" Per default, netrw leaves unmodified buffers open. This autocommand
+" deletes netrw's buffer once it's hidden (using ':q', for example)
+ autocmd FileType netrw setl bufhidden=delete
+
 " This will enable code folding
 " Use the marker method of folding
 augroup filetype_vim
