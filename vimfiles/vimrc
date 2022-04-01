@@ -71,10 +71,10 @@ tnoremap <C-h> <C-W>h
 tnoremap <C-l> <C-W>l
 
 " ale remap
-nnoremap <leader>afws :ALEFix<space>trim_whitespace<CR> 
+nnoremap <leader>ws :ALEFix<space>trim_whitespace<CR> 
 
 " source RC
-nnoremap <leader>sorc :source<space>$MYVIMRC<CR>
+nnoremap <leader>rc :source<space>$MYVIMRC<CR>
 
 " }}}
 
