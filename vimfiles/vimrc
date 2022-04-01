@@ -70,10 +70,6 @@ tnoremap <C-k> <C-W>k
 tnoremap <C-h> <C-W>h
 tnoremap <C-l> <C-W>l
 
-" remap esc key
-inoremap kj <esc>
-cnoremap kj <C-C> 
-
 " ale remap
 nnoremap <leader>afws :ALEFix<space>trim_whitespace<CR> 
 
