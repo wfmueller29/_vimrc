@@ -36,8 +36,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes' 
 Plug 'karoliskoncevicius/vim-sendtowindow'
 Plug 'tpope/vim-surround'
-"Plug 'gruvbox-community/gruvbox'
-Plug 'sainnhe/gruvbox-material' 
+Plug 'gruvbox-community/gruvbox'
+"Plug 'sainnhe/gruvbox-material' 
 Plug 'tpope/vim-fugitive'
 "Plug 'ackyshake/VimCompletesMe'
 Plug 'dense-analysis/ale'
@@ -155,8 +155,8 @@ endif
 let g:gruvbox_material_enable_italic=0 "fixed grubox highlight issue on mac
 let g:gruvbox_material_disable_italic_comment=1 "fixed grubox highlight issue on mac
 set termguicolors "fixed grubox highlight issue on mac
-colorscheme gruvbox-material
 set background=dark
+colorscheme gruvbox
 set laststatus=2
 "let g:ale_completion_enable = 1
 let g:asyncomplete_auto_popup=1
