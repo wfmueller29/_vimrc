@@ -43,7 +43,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'psliwka/vim-smoothie'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'andreypopp/asyncomplete-ale.vim'
 
 call plug#end()
