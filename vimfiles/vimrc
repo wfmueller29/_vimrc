@@ -116,12 +116,14 @@ function! MoveDotRepoAndSource()
   elseif has('macunix')
     !rsync $HOME/dot/* $HOME --exclude=$HOME/.gitignore 
                     \   --exclude=$HOME/.git/ -r -v  
+                    \   --include=".*"
     !rsync $HOME/vimfiles/* $HOME/.vim/ -r 
     !rm -rf $HOME/vimfiles
     !mv $HOME/.vim/vimrc $HOME/.vimrc
    elseif has('unix')
     !rsync $HOME/dot/* $HOME --exclude=$HOME/.gitignore 
                     \   --exclude=$HOME/.git/ -r -v  
+                    \   --include=".*"
     !rsync $HOME/vimfiles/* $HOME/.vim/ -r 
     !rm -rf $HOME/vimfiles
     !mv $HOME/.vim/vimrc $HOME/.vimrc
