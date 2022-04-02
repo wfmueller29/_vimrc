@@ -71,8 +71,10 @@ tnoremap <C-h> <C-W>h
 tnoremap <C-l> <C-W>l
 
 "term remap esc
-tnoremap <Esc> <C-\><C-n>
-tnoremap <C-q> <C-\><C-n>:vsplit<bar>bnext<CR>
+"tnoremap <Esc> <C-\><C-n>
+"tnoremap <A-[> <Esc>
+"split console with other buffer
+tnoremap <C-s> <C-\><C-n>:vsplit<bar>enew<CR><C-W>li<C-W>h
 
 " ale remap
 nnoremap <leader>ws :ALEFix<space>trim_whitespace<CR> 
