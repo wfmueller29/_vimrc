@@ -55,7 +55,7 @@ let mapleader = " "
 " open an r terminal in the right window
 nnoremap <leader>sr :vsplit<CR><C-w>w:terminal<space>R<CR><C-w>w:q!<CR>
 " close the current buffer without closing the window
-nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <leader>q :bprevious<bar>split<bar>bnext<bar>bdelete<CR>
 " insert one character
 nnoremap <leader>i i_<Esc>r
 
@@ -69,6 +69,10 @@ tnoremap <C-j> <C-W>j
 tnoremap <C-k> <C-W>k
 tnoremap <C-h> <C-W>h
 tnoremap <C-l> <C-W>l
+
+"term remap esc
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-q> <C-\><C-n>:vsplit<bar>bnext<CR>
 
 " ale remap
 nnoremap <leader>ws :ALEFix<space>trim_whitespace<CR> 
