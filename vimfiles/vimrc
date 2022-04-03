@@ -43,6 +43,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'psliwka/vim-smoothie'
+Plug 'jiangmiao/auto-pairs'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'andreypopp/asyncomplete-ale.vim'
 
@@ -58,6 +59,8 @@ nnoremap <leader>sr :vsplit<CR><C-w>w:terminal<space>R<CR><C-w>w:q!<CR>
 nnoremap <leader>q :bprevious<bar>split<bar>bnext<bar>bdelete<CR>
 " insert one character
 nnoremap <leader>i i_<Esc>r
+
+nnoremap Y y$
 
 " Window Mappings
 noremap <C-j> <C-W>j

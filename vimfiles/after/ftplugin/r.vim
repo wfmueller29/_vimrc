@@ -8,10 +8,3 @@ set termguicolors
 " ale remap styler
 nnoremap <leader>sty :ALEFix<space>styler<CR>
 
-" Section: imaps
-inoremap <buffer> [ []<Esc>i
-inoremap <buffer> " ""<Esc>i
-inoremap <buffer> ' ''<Esc>i
-inoremap <buffer> ( ()<Esc>i
-inoremap <buffer> { {}<Esc>i
-inoremap <buffer> ` ``<Esc>i
