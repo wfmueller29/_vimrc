@@ -7,3 +7,9 @@ set termguicolors
 
 " ale remap styler
 nnoremap <leader>sty :ALEFix<space>styler<CR>
+
+" set autopairs
+let b:AutoPairs={'(':')', '[':']', '{':'}','"':'"', "`":"`", '```':'```'}
+
+" set format options
+set formatoptions+=r

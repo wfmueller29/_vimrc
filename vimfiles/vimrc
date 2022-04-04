@@ -27,9 +27,9 @@ set path+=**  "allows fuzzy search using find command
 " add plugins 
 
 call plug#begin() 
-" Plug 'vim-pandoc/vim-pandoc' 
-" Plug 'vim-pandoc/vim-pandoc-syntax' 
-" Plug 'vim-pandoc/vim-rmarkdown' 
+Plug 'vim-pandoc/vim-pandoc' 
+Plug 'vim-pandoc/vim-pandoc-syntax' 
+Plug 'vim-pandoc/vim-rmarkdown' 
 " Plug 'NLKNguyen/papercolor-theme'   
 " Plug 'ackyshake/VimCompletesMe' 
 Plug 'vim-airline/vim-airline' 
@@ -43,6 +43,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'psliwka/vim-smoothie'
+Plug 'jiangmiao/auto-pairs'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'andreypopp/asyncomplete-ale.vim'
 
@@ -55,9 +56,11 @@ let mapleader = " "
 " open an r terminal in the right window
 nnoremap <leader>sr :vsplit<CR><C-w>w:terminal<space>R<CR><C-w>w:q!<CR>
 " close the current buffer without closing the window
-nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <leader>q :bprevious<bar>split<bar>bnext<bar>bdelete<CR>
 " insert one character
 nnoremap <leader>i i_<Esc>r
+
+nnoremap Y y$
 
 " Window Mappings
 noremap <C-j> <C-W>j
@@ -69,6 +72,12 @@ tnoremap <C-j> <C-W>j
 tnoremap <C-k> <C-W>k
 tnoremap <C-h> <C-W>h
 tnoremap <C-l> <C-W>l
+
+"term remap esc
+"tnoremap <Esc> <C-\><C-n>
+"tnoremap <A-[> <Esc>
+"split console with other buffer
+tnoremap <C-s> <C-\><C-n>:vsplit<bar>enew<CR><C-W>li<C-W>h
 
 " ale remap
 nnoremap <leader>ws :ALEFix<space>trim_whitespace<CR> 
@@ -116,12 +125,14 @@ function! MoveDotRepoAndSource()
   elseif has('macunix')
     !rsync $HOME/dot/* $HOME --exclude=$HOME/.gitignore 
                     \   --exclude=$HOME/.git/ -r -v  
+                    \   --include=".*"
     !rsync $HOME/vimfiles/* $HOME/.vim/ -r 
     !rm -rf $HOME/vimfiles
     !mv $HOME/.vim/vimrc $HOME/.vimrc
    elseif has('unix')
     !rsync $HOME/dot/* $HOME --exclude=$HOME/.gitignore 
                     \   --exclude=$HOME/.git/ -r -v  
+                    \   --include=".*"
     !rsync $HOME/vimfiles/* $HOME/.vim/ -r 
     !rm -rf $HOME/vimfiles
     !mv $HOME/.vim/vimrc $HOME/.vimrc
@@ -166,6 +177,7 @@ colorscheme gruvbox
 set laststatus=2
 "let g:ale_completion_enable = 1
 let g:asyncomplete_auto_popup=1
+let g:pandoc#modules#disabled=["folding"]
 " colo PaperColor
 " hi ColorColumn ctermbg=grey guibg=grey
 " }}}--------------------------------------------------------------------------
