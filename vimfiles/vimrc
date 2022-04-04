@@ -27,9 +27,9 @@ set path+=**  "allows fuzzy search using find command
 " add plugins 
 
 call plug#begin() 
-" Plug 'vim-pandoc/vim-pandoc' 
-" Plug 'vim-pandoc/vim-pandoc-syntax' 
-" Plug 'vim-pandoc/vim-rmarkdown' 
+Plug 'vim-pandoc/vim-pandoc' 
+Plug 'vim-pandoc/vim-pandoc-syntax' 
+Plug 'vim-pandoc/vim-rmarkdown' 
 " Plug 'NLKNguyen/papercolor-theme'   
 " Plug 'ackyshake/VimCompletesMe' 
 Plug 'vim-airline/vim-airline' 
@@ -177,6 +177,7 @@ colorscheme gruvbox
 set laststatus=2
 "let g:ale_completion_enable = 1
 let g:asyncomplete_auto_popup=1
+let g:pandoc#modules#disabled=["folding"]
 " colo PaperColor
 " hi ColorColumn ctermbg=grey guibg=grey
 " }}}--------------------------------------------------------------------------
