@@ -139,7 +139,7 @@ function! MoveDotRepoAndSource()
   endif
 endfunction
 
-command! Sorc call MoveDotRepoAndSource() | source $MYVIMRC
+command! Sorc call MoveDotRepoAndSource() | source $MYVIMRC | PlugInstall
 
 " }}}
 
