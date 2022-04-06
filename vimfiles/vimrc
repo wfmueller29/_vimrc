@@ -60,7 +60,9 @@ call plug#end()
 let mapleader = " " 
 " open an r terminal in the right window
 nnoremap <leader>sr :vsplit<CR><C-w>w:terminal<space>R<CR><C-w>w:q!<CR>
-" close the current buffer without closing the window
+" quit an r terminal in the right window
+nnoremap <leader>qr <C-W>lq()<CR>n<CR><C-\><C-N>:q<CR>
+"close the current buffer without closing the window
 nnoremap <leader>q :bprevious<bar>split<bar>bnext<bar>bdelete<CR>
 " insert one character
 nnoremap <leader>i i_<Esc>r
