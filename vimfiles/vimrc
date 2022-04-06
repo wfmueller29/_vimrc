@@ -45,6 +45,7 @@ Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/nerdtree'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'andreypopp/asyncomplete-ale.vim'
