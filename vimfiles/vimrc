@@ -1,4 +1,5 @@
 " SETS --------------------------------------------------------------------{{{
+set cmdheight=2 " give a little space at bottom"
 set number 
 set relativenumber
 set noerrorbells 
@@ -44,6 +45,7 @@ Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'jiangmiao/auto-pairs'
+"Plug 'altercation/vim-colors-solarized'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'andreypopp/asyncomplete-ale.vim'
 
