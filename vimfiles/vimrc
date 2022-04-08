@@ -47,6 +47,7 @@ Plug 'psliwka/vim-smoothie'
 Plug 'jiangmiao/auto-pairs'
 "Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
 "Plug 'preservim/nerdtree'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
