@@ -22,6 +22,7 @@ set backspace=2 "allow backspace over indent, start, and new lines
 let $DOT = $HOME . "/dot"
 let $RC = $HOME . "/dot/vimfiles/vimrc"
 set path+=**  "allows fuzzy search using find command
+set formatoptions+=ro
 "}}}---------------------------------------------------------------------------
 
 " PLUGINS ------------------------------------------------------------------{{{
@@ -61,10 +62,14 @@ call plug#end()
 let mapleader = " " 
 " open an r terminal in the right window
 nnoremap <leader>sr :vsplit<CR><C-w>w:terminal<space>R<CR><C-w>w:q!<CR>
+" start python console in the right windows
+nnoremap <leader>sp :vsplit<CR><C-w>w:terminal<space>python<CR><C-w>w:q!<CR>
 " quit an r terminal in the right window
 nnoremap <leader>qr <C-W>lq()<CR>n<CR><C-\><C-N>:q<CR>
+" quit an python terminal in the right window
+nnoremap <leader>qp <C-W>lexit()<CR>n<CR><C-\><C-N>:q<CR>
 "close the current buffer without closing the window
-nnoremap <leader>q :bprevious<bar>split<bar>bnext<bar>bdelete<CR>
+nnoremap <leader>qw :bprevious<bar>split<bar>bnext<bar>bdelete<CR>
 " insert one character
 nnoremap <leader>i i_<Esc>r
 
