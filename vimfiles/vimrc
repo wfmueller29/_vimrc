@@ -97,7 +97,10 @@ nnoremap <leader>ws :ALEFix<space>trim_whitespace<CR>
 
 " source RC
 nnoremap <leader>rc :source<space>$MYVIMRC<CR>
-
+" git add commit push rc
+nnoremap <leader>prc :call<space>AddDotCommitPush()
+" md to pdf
+nnoremap <leader>pdf :call<space>MdToPdf()<CR>
 " }}}
 
 " VIMSCRIPT ----------------------------------------------------------------{{{
@@ -154,6 +157,21 @@ endfunction
 
 command! Sorc call MoveDotRepoAndSource() | source $MYVIMRC | PlugInstall
 
+" md to pdf function
+function! MdToPdf()
+    let pdf=expand('%:t:r') . ".pdf "
+    let md=expand('%:t')
+    let cmd="!pandoc -s -o " . pdf . md
+    execute cmd
+endfunction
+
+" add dot and commit, then push to main
+function! AddDotCommitPush()
+    let cwd=expand('%:d')
+    !cd $DOT && git add . && git commit && git push origin main
+endfunction
+
+    
 " }}}
 
 " STATUS LINE --------------------------------------------------------------{{{
