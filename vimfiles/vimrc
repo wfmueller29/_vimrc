@@ -98,7 +98,7 @@ nnoremap <leader>ws :ALEFix<space>trim_whitespace<CR>
 " source RC
 nnoremap <leader>rc :source<space>$MYVIMRC<CR>
 " git add commit push rc
-nnoremap <leader>prc :call<space>AddDotCommitPush()
+nnoremap <leader>prc :call<space>AddDotCommitPush()<CR>
 " md to pdf
 nnoremap <leader>pdf :call<space>MdToPdf()<CR>
 " }}}
