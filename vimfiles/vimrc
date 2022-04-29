@@ -98,11 +98,11 @@ nnoremap <leader>ws :ALEFix<space>trim_whitespace<CR>
 " source RC
 nnoremap <leader>src :Sorc<CR>
 " git add commit push rc
-nnoremap <leader>dp :Pushdot<CR>
+nnoremap <leader>pd :Pushdot<CR>
 " pull dot aka fetch
-nnoremap <leader>df :Pulldot<CR>
+nnoremap <leader>fd :Pulldot<CR>
 " md to pdf
-nnoremap <leader>pdf :call<space>MdToPdf()<CR>
+nnoremap <leader>pan :call<space>MdToPdf()<CR>
 " }}}
 
 " VIMSCRIPT ----------------------------------------------------------------{{{
