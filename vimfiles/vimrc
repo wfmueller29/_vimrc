@@ -162,13 +162,13 @@ endfunction
 function! MdToPdf()
     let pdf=expand('%:t:r') . ".pdf "
     let md=expand('%:t')
-    let cmd="!pandoc -s -o " . pdf . md
+    let pandoccmd="pandoc -s -o " . pdf . md
+    let cmd="!cd " . expand('%:h') . " && " . pandoccmd
     execute cmd
 endfunction
 
 " add dot and commit, then push to main
 function! AddDotCommitPush()
-    let cwd=expand('%:d')
     !cd $DOT && git add . && git commit && git push origin main
 endfunction
 
