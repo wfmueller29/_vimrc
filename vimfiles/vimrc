@@ -96,9 +96,9 @@ tnoremap <C-s> <C-\><C-n>:vsplit<bar>enew<CR><C-W>li<C-W>h
 nnoremap <leader>ws :ALEFix<space>trim_whitespace<CR> 
 
 " source RC
-nnoremap <leader>rc :source<space>$MYVIMRC<CR>
+nnoremap <leader>src :Sorc<CR>
 " git add commit push rc
-nnoremap <leader>prc :call<space>AddDotCommitPush()<CR>
+nnoremap <leader>prc :Pushrc<CR>
 " md to pdf
 nnoremap <leader>pdf :call<space>MdToPdf()<CR>
 " }}}
@@ -155,7 +155,6 @@ function! MoveDotRepoAndSource()
   endif
 endfunction
 
-command! Sorc call MoveDotRepoAndSource() | source $MYVIMRC | PlugInstall
 
 " md to pdf function
 function! MdToPdf()
@@ -171,7 +170,8 @@ function! AddDotCommitPush()
     !cd $DOT && git add . && git commit && git push origin main
 endfunction
 
-    
+command! Sorc call MoveDotRepoAndSource() | source $MYVIMRC | PlugInstall
+command! Pushrc call AddDotCommitPush()
 " }}}
 
 " STATUS LINE --------------------------------------------------------------{{{
