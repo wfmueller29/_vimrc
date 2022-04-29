@@ -98,7 +98,9 @@ nnoremap <leader>ws :ALEFix<space>trim_whitespace<CR>
 " source RC
 nnoremap <leader>src :Sorc<CR>
 " git add commit push rc
-nnoremap <leader>prc :Pushrc<CR>
+nnoremap <leader>pd :Pushdot<CR>
+" pull dot aka fetch
+nnoremap <leader>fd :Pulldot<CR>
 " md to pdf
 nnoremap <leader>pdf :call<space>MdToPdf()<CR>
 " }}}
@@ -170,8 +172,14 @@ function! AddDotCommitPush()
     !cd $DOT && git add . && git commit && git push origin main
 endfunction
 
+" pull dot 
+function! PullDot()
+    !cd $DOT && git pull origin main
+endfunction
+
 command! Sorc call MoveDotRepoAndSource() | source $MYVIMRC | PlugInstall
-command! Pushrc call AddDotCommitPush()
+command! Pushdot call AddDotCommitPush()
+command! Pulldot call PullDot()
 " }}}
 
 " STATUS LINE --------------------------------------------------------------{{{
