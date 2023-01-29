@@ -75,6 +75,10 @@ nnoremap <leader>i i_<Esc>r
 
 nnoremap Y y$
 
+nmap <leader>y "*y 
+vmap <leader>y "*y 
+nmap <leader>p "*p
+
 " Window Mappings
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
@@ -85,6 +89,7 @@ tnoremap <C-j> <C-W>j
 tnoremap <C-k> <C-W>k
 tnoremap <C-h> <C-W>h
 tnoremap <C-l> <C-W>l
+tnoremap <leader><ESC> <C-\><C-n>
 
 "term remap esc
 "tnoremap <Esc> <C-\><C-n>
@@ -163,7 +168,7 @@ function! MdToPdf()
     let pdf=expand('%:t:r') . ".pdf "
     let md=expand('%:t')
     let pandoccmd="pandoc -s -o " . pdf . md
-    let cmd="!cd " . expand('%:h') . " && " . pandoccmd
+    let cmd="!cd " . expand('%:h') . " && " . pandoccmd . " && " . "open " . pdf
     execute cmd
 endfunction
 
@@ -210,7 +215,7 @@ endif
 " OUTRO --------------------------------------------------------------------{{{  
 "let g:gruvbox_material_enable_italic=0 "fixed grubox highlight issue on mac
 "let g:gruvbox_material_disable_italic_comment=1 "fixed grubox highlight issue on mac
-set termguicolors "fixed grubox highlight issue on mac
+"set termguicolors "fixed grubox highlight issue on mac
 set background=dark
 colorscheme gruvbox
 set laststatus=2
