@@ -3,7 +3,9 @@ set softtabstop=2
 set shiftwidth=2 
 set autoindent
 set smartindent
-set termguicolors
+if !has('macunix')
+    set termguicolors " fixed grubox highlight issue on mac
+endif
 
 " ale remap styler
 nnoremap <leader>sty :ALEFix<space>styler<CR>
