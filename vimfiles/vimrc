@@ -215,7 +215,11 @@ endif
 " OUTRO --------------------------------------------------------------------{{{  
 "let g:gruvbox_material_enable_italic=0 "fixed grubox highlight issue on mac
 "let g:gruvbox_material_disable_italic_comment=1 "fixed grubox highlight issue on mac
-"set termguicolors "fixed grubox highlight issue on mac
+
+if !has('macunix')
+    set termguicolors " fixed grubox highlight issue on mac
+endif
+
 set background=dark
 colorscheme gruvbox
 set laststatus=2
