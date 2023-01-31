@@ -37,6 +37,7 @@ Plug 'vim-pandoc/vim-rmarkdown'
 Plug 'vim-airline/vim-airline' 
 Plug 'vim-airline/vim-airline-themes' 
 Plug 'karoliskoncevicius/vim-sendtowindow'
+"Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-surround'
 Plug 'gruvbox-community/gruvbox'
 "Plug 'sainnhe/gruvbox-material' 
@@ -108,6 +109,10 @@ nnoremap <leader>pd :Pushdot<CR>
 nnoremap <leader>fd :Pulldot<CR>
 " md to pdf
 nnoremap <leader>pan :call<space>MdToPdf()<CR>
+
+" send to terminal
+" vnoremap <leader>l :<BS><BS><BS><BS><BS>call<space>YankRight()<CR>
+
 " }}}
 
 " VIMSCRIPT ----------------------------------------------------------------{{{
@@ -185,7 +190,33 @@ endfunction
 command! Sorc call MoveDotRepoAndSource() | source $MYVIMRC | PlugInstall
 command! Pushdot call AddDotCommitPush()
 command! Pulldot call PullDot()
-" }}}
+
+" get visual selection
+" function! s:get_visual_selection()
+"     " Why is this not a built-in Vim script function?!
+"     let [line_start, column_start] = getpos("'<")[1:2]
+"     let [line_end, column_end] = getpos("'>")[1:2]
+"     let lines = getline(line_start, line_end)
+"     if len(lines) == 0
+"         return ''
+"     endif
+"     let lines[-1] = lines[-1][: column_end - (&selection == 'inclusive' ? 1 : 2)]
+"     let lines[0] = lines[0][column_start - 1:]
+"     return join(lines, "\n")
+" endfunction
+
+" " yank and paste to terminal buffer to right
+" function! YankRight()
+"     let text = s:get_visual_selection()
+"     wincmd l
+"     normal <C-\><C-n>
+"     let winno=winnr()
+"     let bufno=winbufnr(winno)
+"     " echo text
+"     call term_sendkeys(bufno, text)
+" endfunction
+
+""" }}}
 
 " STATUS LINE --------------------------------------------------------------{{{
 
@@ -226,6 +257,7 @@ set laststatus=2
 "let g:ale_completion_enable = 1
 let g:asyncomplete_auto_popup=1
 let g:pandoc#modules#disabled=["folding"]
+" let g:slime_target = "vimterminal"
 " colo PaperColor
 " hi ColorColumn ctermbg=grey guibg=grey
 " }}}--------------------------------------------------------------------------
